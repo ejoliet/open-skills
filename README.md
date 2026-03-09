@@ -1,324 +1,152 @@
 # Open Skills
 
-## Teach your AI Agent Must-Have Skills — Save 98% of API Calls
-
-Stop wasting tokens on trial-and-error.
-
-Give your AI agent battle-tested, ready-to-use skills that work the first time —
-cut token usage by **95–98%**, lower model costs, and make smaller models reliable.
-
-[**MAIN INSTALLATION: USE THE WEBSITE QUICK START**](https://openskills.besoeasy.com/)
-
-[![Use Open Skills Now](https://img.shields.io/badge/USE%20NOW-openskills.besoeasy.com-2ea44f?style=for-the-badge)](https://openskills.besoeasy.com/)
+> Battle-tested execution playbooks that give any AI agent the exact commands, APIs, and patterns it needs — cutting token usage by **95–98%** and making local models as capable as GPT-4.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-production--ready-brightgreen.svg)](skills/)
-[![Contributions](https://img.shields.io/badge/contributions-agent--friendly-orange.svg)](CONTRIBUTING.md)
+[![Skills](https://img.shields.io/badge/skills-39%20production--ready-brightgreen.svg)](skills/)
+[![Contributions](https://img.shields.io/badge/contributions-welcome-orange.svg)](CONTRIBUTING.md)
 [![Telegram](https://img.shields.io/badge/community-Telegram-26A5E4.svg)](https://t.me/+FC8ppvnUsj8xM2Vl)
 
-Battle-tested, copy-paste execution playbooks for AI agents.
+---
 
-**Two ways to win:**
+## The Problem
 
-🏠 **Go 100% free** — Ollama + Llama/Mistral/Qwen + Open Skills = cloud-level practical task execution at **$0**
+AI agents waste tokens discovering what you already know:
 
-💰 **Keep cloud quality, slash cloud cost** — GPT-4/Claude/Gemini + Open Skills = **~$0.003–$0.005/task** instead of **~$0.15–$0.25**
+- **Cloud models** (GPT-4, Claude) — 10–30 trial-and-error calls per task → **$0.15–$0.25/task**
+- **Local models** (Llama, Mistral, Qwen) — often fail outright without step-by-step guidance
+
+## The Solution
+
+Pre-written, tested skill files your agent reads once and executes correctly the first time.
+
+```
+Without Open Skills                 With Open Skills
+─────────────────────────────────   ─────────────────────────────────
+Agent searches for API docs         Agent reads SKILL.md
+Tries wrong endpoint                Runs the exact working command
+Debugs response format              Parses the output correctly
+Retries 15–20 times                 Done in 1–3 calls
+
+~50,000 tokens  ~$0.20              ~1,000 tokens  ~$0.004
+```
 
 ---
 
-## Quick Links
+## Quick Start
 
-- [Browse Skills](skills/)
-- [Contributing Guide](CONTRIBUTING.md)
-- [Skill Template](SKILL_TEMPLATE.md)
+**Step 1 — Load the agent prompt**
 
-## Why This Matters
+Copy the contents of [`prompt.txt`](prompt.txt) into your agent's system prompt, memory, or instructions file. This tells the agent to check `~/open-skills` before every task and auto-sync skills from the repo.
 
-**The Problem:** AI agents are expensive and cloud-dependent:
+- **OpenCode.ai** → paste into your project's `AGENTS.md` or memory file
+- **Claude Desktop** → paste into *Settings → Custom Instructions*
+- **Cursor / Windsurf** → add to `.cursorrules` or the user rules file
+- **Any other agent** → paste as the system prompt
 
-- **Cloud models (GPT-4, Claude, Gemini):** Often spend 10–30+ calls discovering and debugging each task → ~$0.15–$0.25 per simple task
-- **Local models (Llama, Mistral, Qwen):** Often know the goal but fail at API/tool details without guidance
-- Both burn through tokens on trial-and-error, searching documentation, and debugging
+**Step 2 — Use a skill**
 
-**The Solution:** Pre-written, tested skills that work with ANY AI model:
-
-- ✅ **Working code examples** (Node.js, Bash) — no debugging needed
-- ✅ **Privacy-first tools** — free public APIs, no API keys required for most skills
-- ✅ **Agent-optimized prompts** — structured for direct consumption by LLMs
-- ✅ **Real-world tested** — production-ready patterns, not theoretical examples
-
-**The New Approach:** Separate reasoning from execution knowledge.
-
-- Model handles intent and orchestration
-- Open Skills provides tested implementation steps (commands, API patterns, parsing logic)
-- Outcome: faster execution, lower token usage, and higher reliability across both cloud and local models
-
-**The Game-Changer:** 🚀 **Make local models as capable as cloud models**
-
-Instead of paying models to figure everything out from scratch, **give them proven execution playbooks**:
-
-- Llama 3.1 / Mistral / Qwen (free, local) + Open Skills → performs like GPT-4/Claude for practical tasks
-- **Result: $0 cost, 100% self-hostable, complete privacy**
-
-**The Impact:**
-
-- 💰 **95–98% cloud cost reduction** — Cloud models drop from ~$0.15–$0.25 to ~$0.003–$0.005 per task with skills
-- 🏠 **$0 local operation** — Local models + skills run practical tasks without cloud spend
-- 🏠 **100% self-hostable** — Run Ollama + Open Skills entirely offline
-- 🔒 **Complete privacy** — No data leaves your machine
-- ⚡ **10-50x faster execution** — No trial-and-error loops
-- 🎯 **Higher success rate** — Proven patterns that work reliably
-- 🤖 **Automated contributions** — Agents can auto-fork, commit, and PR new skills via GitHub CLI
-- 🧠 **Self-improving ecosystem** — Community skills flow back into the repository automatically
-- 🏆 **Public credit** — Contributors get GitHub commit history and recognition
-- 🔍 **Zero search API costs** — Use free SearXNG instances instead of paying for Brave Search ($5/1000), Google Search API, or Bing API
-
-## Real-World Example
-
-**Without open-skills (Cloud models like GPT-4/Claude):**
+Your agent will now check for a matching skill automatically. You can also invoke one directly:
 
 ```
-User: "Check the balance of this Bitcoin address: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
-
-Cloud AI Agent → Searches for "bitcoin balance API"
-                → Tries blockchain.com (wrong endpoint)
-                → Tries blockchain.info (wrong format)
-                → Debugs response parsing
-                → Realizes satoshis need conversion
-                → Finally works after 15-20 API calls
-
-Result: ❌ 2-3 minutes, 50,000+ tokens, $0.15-$0.25 cost
+Read ~/open-skills/skills/web-search-api/SKILL.md and search for "latest AI news"
 ```
 
-**Without open-skills (Local models like Llama/Mistral):**
+No API keys required for most skills.
 
-```
-User: "Check the balance of this Bitcoin address: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
-
-Local AI (Llama/Mistral) → Tries to search for API documentation
-                         → Gets confused about endpoints
-                         → Generates incorrect curl command
-                         → Unable to parse response correctly
-                         → Gives up or returns error
-
-Result: ❌ Task fails, user frustrated
-```
-
-**With open-skills (ANY MODEL - GPT-4, Claude, Llama, Mistral, Gemini):**
-
-```
-User: "Check the balance of this Bitcoin address: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
-
-Any AI Agent → Finds check-crypto-address-balance.md
-             → Uses working example: curl blockchain.info/q/addressbalance/[address]
-             → Converts satoshis to BTC (÷ 1e8)
-             → Returns result
-
-Result: ✅ 10 seconds, ~1,000 tokens, works first time
-        ✅ Cloud models: $0.003-$0.005 (was $0.15-$0.25) — 95%+ savings
-        ✅ Local models: $0.00 (free) — task actually succeeds
-```
-
-**Key insight:** Open Skills doesn't just make expensive models cheaper — **it helps low-powered and free models run tasks reliably with less hallucination**.
+> **Works best with [OpenCode.ai](https://opencode.ai)** — drop `prompt.txt` into your project's `AGENTS.md` and the agent picks up every skill automatically, with zero extra configuration.
 
 ---
 
-**Example 2: Web Search (API Cost Elimination)**
+## Skills
 
-**Without open-skills:**
-
-```
-User: "Search for recent AI agent news"
-
-Agent → Uses Google Custom Search API ($5/1000 queries)
-      → Or Brave Search API ($5/1000 queries)
-      → Bing Search API ($3-7/1000 queries)
-      → Monthly cost: $50-100+ for 10k searches
-
-Result: ❌ Expensive, requires API keys, tracked searches
-```
-
-**With open-skills:**
-
-```
-User: "Search for recent AI agent news"
-
-Agent → Uses SearXNG skill (learns from [skills/web-search-api/SKILL.md](skills/web-search-api/SKILL.md))
-      → Connects to free SearXNG instance (searx.be)
-      → Gets results from 70+ search engines
-      → No API key, no rate limits, no tracking
-
-Result: ✅ $0 cost, unlimited queries, privacy-respecting
-```
-
-**Savings:** $360-$840/year for typical usage, $3,000-$8,000/year for high-volume agents
-
----
-
-**Example 3: Trading Indicators (Quant Analysis in Seconds)**
-
-**Without open-skills:**
-
-```
-User: "Calculate RSI, MACD, and top indicators from this OHLCV dataset"
-
-Agent → Searches for indicator formulas one by one
-      → Implements RSI, then debugs MACD math
-      → Repeats for Bollinger, Stochastic, ATR, ADX, etc.
-      → Fixes column mapping/warmup NaN issues
-      → Ends up with inconsistent outputs after many iterations
-
-Result: ❌ Slow, error-prone, heavy token/API usage
-```
-
-**With open-skills:**
-
-```
-User: "Calculate RSI, MACD, and top indicators from this OHLCV dataset"
-
-Agent → Finds trading-indicators-from-price-data.md
-      → Runs the ready Python workflow with pandas + pandas-ta
-      → Computes 20 indicators (RSI, MACD, SMA/EMA, BB, Stoch, ATR, ADX, CCI, OBV, MFI, ROC)
-      → Returns clean, structured output immediately
-
-Result: ✅ Fast, consistent, production-ready calculations
-```
-
-**Savings:** Massive reduction in trial-and-error, faster indicator pipelines, and more reliable strategy signals
+| Skill | What it does |
+|---|---|
+| [age-file-encryption](skills/age-file-encryption/SKILL.md) | Encrypt / decrypt files with `age` |
+| [anonymous-file-upload](skills/anonymous-file-upload/SKILL.md) | Upload files without an account |
+| [browser-automation-agent](skills/browser-automation-agent/SKILL.md) | Automate browsers with Playwright |
+| [bulk-github-star](skills/bulk-github-star/SKILL.md) | Star GitHub repos in bulk via CLI |
+| [changelog-generator](skills/changelog-generator/SKILL.md) | Generate changelogs from git history |
+| [chat-logger](skills/chat-logger/SKILL.md) | Log and persist chat conversations |
+| [check-crypto-address-balance](skills/check-crypto-address-balance/SKILL.md) | Look up Bitcoin / crypto balances |
+| [city-distance](skills/city-distance/SKILL.md) | Calculate distance between cities |
+| [city-tourism-website-builder](skills/city-tourism-website-builder/SKILL.md) | Build a tourism site for any city |
+| [csv-data-summarizer](skills/csv-data-summarizer/SKILL.md) | Summarize and analyze CSV files |
+| [d3js-data-visualization](skills/d3js-data-visualization/SKILL.md) | Create charts with D3.js |
+| [database-query-and-export](skills/database-query-and-export/SKILL.md) | Query databases and export results |
+| [file-tracker](skills/file-tracker/SKILL.md) | Track file changes over time |
+| [free-geocoding-and-maps](skills/free-geocoding-and-maps/SKILL.md) | Geocode addresses for free |
+| [free-translation-api](skills/free-translation-api/SKILL.md) | Translate text without API keys |
+| [free-weather-data](skills/free-weather-data/SKILL.md) | Get weather data for free |
+| [generate-asset-price-chart](skills/generate-asset-price-chart/SKILL.md) | Chart stock / crypto price history |
+| [generate-qr-code-natively](skills/generate-qr-code-natively/SKILL.md) | Generate QR codes with no service |
+| [get-crypto-price](skills/get-crypto-price/SKILL.md) | Fetch live crypto prices |
+| [humanizer](skills/humanizer/SKILL.md) | Make AI-written text sound human |
+| [ip-lookup](skills/ip-lookup/SKILL.md) | Look up IP address geolocation |
+| [json-and-csv-data-transformation](skills/json-and-csv-data-transformation/SKILL.md) | Transform between JSON and CSV |
+| [news-aggregation](skills/news-aggregation/SKILL.md) | Aggregate news from RSS / APIs |
+| [nostr-logging-system](skills/nostr-logging-system/SKILL.md) | Log events to the Nostr network |
+| [pdf-manipulation](skills/pdf-manipulation/SKILL.md) | Merge, split, and edit PDFs |
+| [phone-specs-scraper](skills/phone-specs-scraper/SKILL.md) | Scrape phone specs from the web |
+| [presenton](skills/presenton/SKILL.md) | Generate presentations from text |
+| [random-contributor](skills/random-contributor/SKILL.md) | Pick a random repo contributor |
+| [send-email-programmatically](skills/send-email-programmatically/SKILL.md) | Send email from a script |
+| [static-assets-hosting](skills/static-assets-hosting/SKILL.md) | Host static files for free |
+| [trading-indicators-from-price-data](skills/trading-indicators-from-price-data/SKILL.md) | Calculate RSI, MACD, and more |
+| [user-ask-for-report](skills/user-ask-for-report/SKILL.md) | Generate structured reports on demand |
+| [using-nostr](skills/using-nostr/SKILL.md) | Read and post on Nostr |
+| [using-scrapy](skills/using-scrapy/SKILL.md) | Scrape websites with Scrapy |
+| [using-telegram-bot](skills/using-telegram-bot/SKILL.md) | Build and run Telegram bots |
+| [using-web-scraping](skills/using-web-scraping/SKILL.md) | General web scraping patterns |
+| [using-youtube-download](skills/using-youtube-download/SKILL.md) | Download YouTube videos / audio |
+| [web-interface-guidelines-review](skills/web-interface-guidelines-review/SKILL.md) | Review UI against best practices |
+| [web-search-api](skills/web-search-api/SKILL.md) | Search the web free via SearXNG |
 
 ---
 
-**Example 4: Hosted Report Website (Tailwind + Originless)**
+## Cost Impact
 
-**Without open-skills:**
+| Setup | Cost / task | Success rate | Privacy |
+|---|---|---|---|
+| Cloud model, no skills | $0.15 – $0.25 | 85 – 95% | ❌ Cloud |
+| Cloud model + Open Skills | $0.003 – $0.005 | ~98% | ❌ Cloud |
+| Local model, no skills | $0 | 30 – 50% | ✅ Local |
+| **Local model + Open Skills** | **$0** | **~95%** | **✅ Local** |
 
-```
-User: "Create a beautiful white-themed report website from this content and host it instantly"
-
-Agent → Experiments with random HTML/CSS templates
-      → Tries multiple hosting providers and auth flows
-      → Debugs upload endpoints and response formats
-      → Rewrites password logic several times
-      → Finally ships a fragile page after many retries
-
-Result: ❌ Slow delivery, inconsistent styling, avoidable token/API waste
-```
-
-**With open-skills:**
-
-```
-User: "Create a beautiful white-themed report website from this content and host it instantly"
-
-Agent → Finds generate-report-originless-site.md
-      → Generates index.html with Tailwind CDN + subtle animations
-      → Applies clean white-background report layout
-      → Uploads to Originless (local/public endpoint)
-      → Returns hosted URL/CID immediately
-      → If requested, adds client-side password unlock for encrypted content
-
-Result: ✅ Fast static site generation, instant decentralized hosting, predictable output
-```
-
-**Savings:** Fewer retries, faster publish time, and consistent website quality with account-free hosting
-
-## Cost Savings Calculator
-
-### For Cloud Models (Make them 98% cheaper)
-
-Typical AI agent task without pre-built skills: **20-50 API calls** (trial and error)  
-Same task with open-skills: **1-3 API calls** (direct execution)
-
-| Model             | Cost per 1M tokens (input) | Without open-skills | With open-skills    | **Savings per task** |
-| ----------------- | -------------------------- | ------------------- | ------------------- | -------------------- |
-| GPT-4             | $5.00                      | $0.25 (50k tokens)  | $0.005 (1k tokens)  | **$0.245 (98%)**     |
-| Claude Sonnet 3.5 | $3.00                      | $0.15 (50k tokens)  | $0.003 (1k tokens)  | **$0.147 (98%)**     |
-| GPT-3.5 Turbo     | $0.50                      | $0.025 (50k tokens) | $0.0005 (1k tokens) | **$0.0245 (98%)**    |
-
-**Over 100 tasks/month:**
-
-- GPT-4: Save ~$24.50/month
-- Claude: Save ~$14.70/month
-- For teams running 1,000+ agent tasks: **Save $240-$1,470/month**
-
----
-
-### For Local Models (Make them actually work)
-
-**The Real Game-Changer:** Open Skills makes local models competitive with GPT-4 for practical tasks.
-
-| Model Stack                       | Cost               | Success Rate | Speed      | Privacy      |
-| --------------------------------- | ------------------ | ------------ | ---------- | ------------ |
-| **Cloud models without skills**   | $0.15-$0.25/task   | 85-95%       | 2-3 min    | ❌ Cloud     |
-| **Cloud models with skills**      | $0.003-$0.005/task | 98%          | 10 sec     | ❌ Cloud     |
-| **Local models without skills**   | $0                 | 30-50%       | Varies     | ✅ Local     |
-| **🚀 Local models + Open Skills** | **$0**             | **95%+**     | **10 sec** | **✅ Local** |
-
-**The 100% Free, Self-Hostable AI Agent Stack:**
+**The 100% free stack:**
 
 ```bash
-# Install Ollama (free, local)
 curl -fsSL https://ollama.com/install.sh | sh
 ollama pull llama3.1:8b
-
-# Clone Open Skills (free, open-source)
 git clone https://github.com/besoeasy/open-skills ~/open-skills
-
-# Result: GPT-4-level task execution at $0 cost
-# - No API keys needed
-# - No cloud dependency
-# - Complete privacy
-# - 100% self-hostable
+# GPT-4-level task execution — $0 cost, fully offline
 ```
-
-**Monthly cost comparison:**
-
-- **Cloud models (GPT-4/Claude) without skills:** $150-$1,470/month (1,000 tasks)
-- **Cloud models with skills:** $3-$15/month (95%+ savings)
-- **Local models (Llama/Mistral) + Open Skills:** **$0/month** (100% free, actually works)
 
 ---
 
-**Plus:** Eliminate search API costs entirely by using free SearXNG instances instead of:
+## Why It Works
 
-- Google Custom Search API ($5/1000 queries) → **$0 with SearXNG**
-- Brave Search API ($5/1000 queries) → **$0 with SearXNG**
-- Bing Search API ($3-7/1000 queries) → **$0 with SearXNG**
+Skills separate *reasoning* from *execution knowledge*:
 
-**Total potential savings: $600-$2,300/month** for active AI agents  
-**Or go 100% free with local models + Open Skills: $0/month forever**
+- The model handles intent and orchestration
+- Open Skills provides the tested commands, API patterns, and parsing logic
+- Result: fewer retries, lower token usage, higher reliability
 
-## Perfect For
+Every skill file is:
 
-- 🏠 **Self-hosted AI enthusiasts** — Run Llama/Mistral with Ollama + Open Skills for GPT-4-level capabilities at $0 cost
-- 🤖 **Autonomous AI agents** — Give your agent production-ready capabilities out of the box
-- 💼 **Business automation** — Crypto monitoring, document processing, web scraping, notifications
-- 🔍 **Eliminating API costs** — Replace expensive search, translation, geocoding, and weather APIs with free alternatives
-- 🛠️ **Developer tools** — Integrate with OpenCode.ai, Claude Desktop, Ollama, custom MCP servers
-- 📚 **AI learning** — Study working examples instead of guessing API patterns
-- 🔐 **Privacy-conscious projects** — All skills use open-source tools and public APIs, run entirely offline
-- 💰 **Cost-sensitive teams** — Reduce AI agent costs by 98% or go completely free with local models
+- ✅ **Production-tested** — real working code, not theory
+- ✅ **Agent-optimized** — structured for direct LLM consumption
+- ✅ **Privacy-first** — free public APIs, no vendor lock-in
+- ✅ **Model-agnostic** — works with GPT-4, Claude, Llama, Mistral, Gemini, anything
 
-## Philosophy
+---
 
-**Why we built this:**
+## Contributing
 
-AI agents are incredibly powerful, but there's a massive gap:
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [SKILL_TEMPLATE.md](SKILL_TEMPLATE.md).
 
-- **Expensive cloud models (GPT-4, Claude, Gemini):** Smart enough to figure things out, but cost $0.15-$0.25+ per task
-- **Free local models (Llama, Mistral, Qwen):** Can't figure things out reliably, so they fail or give up
+Agents can auto-fork, commit, and open a PR for a new skill using the GitHub CLI — contributions from humans and bots are equally welcome.
 
-**Open Skills bridges this gap** by providing the "figuring out" part:
+---
 
-- Instead of making models search, experiment, and debug → Give them working code
-- Instead of requiring high intelligence → Provide pre-tested patterns
-- Result: **Cheap models execute like expensive models**
-
-**Our approach:**
-
-- ✅ **Tested code, not theory** — Every example is production-ready
-- ✅ **Privacy-first** — Open-source tools, minimal tracking, no vendor lock-in
-- ✅ **Agent-optimized** — Written for LLM consumption (clear structure, copy-paste ready)
-- ✅ **Free to use** — MIT licensed, no API keys required for core functionality
-- ✅ **Model-agnostic** — Works with GPT-4, Claude, Gemini, Llama, Mistral, Qwen, any LLM
-
-**The result:** AI agents that are smarter, faster, and cheaper to run — or **completely free** with local models.
+MIT License
