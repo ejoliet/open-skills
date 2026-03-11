@@ -1,5 +1,5 @@
 ---
-name: using-scrapy
+name: crawl-websites-at-scale
 description: "Scrape websites at scale using Scrapy, a Python web crawling and scraping framework. Use when: (1) Crawling multiple pages or entire sites, (2) Extracting structured data from HTML/XML, or (3) Building automated data pipelines from web sources."
 ---
 
