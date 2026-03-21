@@ -3,7 +3,7 @@
 > Battle-tested execution playbooks that give any AI agent the exact commands, APIs, and patterns it needs — cutting token usage by **95–98%** and making local models as capable as GPT-4.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-39%20production--ready-brightgreen.svg)](skills/)
+[![Skills](https://img.shields.io/badge/skills-40%20production--ready-brightgreen.svg)](skills/)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-orange.svg)](CONTRIBUTING.md)
 
 ---
@@ -180,6 +180,7 @@ Paste the full contents of `prompt.txt` as the system prompt. The instructions a
 | [send-email-programmatically](skills/send-email-programmatically/SKILL.md)               | Send email from a script              |
 | [static-assets-hosting](skills/static-assets-hosting/SKILL.md)                           | Host static files for free            |
 | [trading-indicators-from-price-data](skills/trading-indicators-from-price-data/SKILL.md) | Calculate RSI, MACD, and more         |
+| [torrent-search](skills/torrent-search/SKILL.md)                                         | Find torrents by title or IMDB ID     |
 | [user-ask-for-report](skills/user-ask-for-report/SKILL.md)                               | Generate structured reports on demand |
 | [using-nostr](skills/using-nostr/SKILL.md)                                               | Read and post on Nostr                |
 | [using-scrapy](skills/using-scrapy/SKILL.md)                                             | Scrape websites with Scrapy           |
