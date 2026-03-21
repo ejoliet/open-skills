@@ -34,14 +34,112 @@ Retries 15–20 times                 Done in 1–3 calls
 
 ## Quick Start
 
+**Step 1 — Clone the skills library (once)**
+
+```bash
+git clone https://github.com/besoeasy/open-skills ~/open-skills
+```
+
+**Step 2 — Tell your agent about it**
+
 Copy the contents of [`prompt.txt`](prompt.txt) into your agent's system prompt, memory, or instructions file. This tells the agent to check `~/open-skills` before every task and auto-sync skills from the repo.
 
-- **OpenCode.ai** → paste into your project's `AGENTS.md` or memory file
-- **Claude Desktop** → paste into _Settings → Custom Instructions_
-- **Cursor / Windsurf** → add to `.cursorrules` or the user rules file
-- **Any other agent** → paste as the system prompt
+---
 
-Your agent will now check for a matching skill automatically. You can also invoke one directly:
+### OpenCode
+
+Drop `prompt.txt` into your project's `AGENTS.md` file. OpenCode reads it automatically at session start — zero extra configuration.
+
+```bash
+cat prompt.txt >> AGENTS.md
+```
+
+---
+
+### Claude Desktop
+
+1. Open Claude Desktop → **Settings** → **Custom Instructions**
+2. Paste the full contents of `prompt.txt`
+3. Save — Claude will check `~/open-skills` before every task in every conversation
+
+---
+
+### Cursor
+
+Add the contents of `prompt.txt` to your global user rules:
+
+1. Open Cursor → **Settings** → **General** → **Rules for AI**
+2. Paste the contents of `prompt.txt`
+
+Or add it per-project via `.cursorrules`:
+
+```bash
+cat prompt.txt >> .cursorrules
+```
+
+---
+
+### Windsurf
+
+Add the contents of `prompt.txt` to your global user rules:
+
+1. Open Windsurf → **Settings** → **AI** → **Custom Instructions**  
+2. Paste the contents of `prompt.txt`
+
+Or add it per-project via `.windsurfrules`:
+
+```bash
+cat prompt.txt >> .windsurfrules
+```
+
+---
+
+### GitHub Copilot (VS Code)
+
+Add a `.github/copilot-instructions.md` file to your repository:
+
+```bash
+cp prompt.txt .github/copilot-instructions.md
+```
+
+Copilot reads this file as context for every chat in that workspace.
+
+---
+
+### Aider
+
+Pass `prompt.txt` as a system prompt when launching:
+
+```bash
+aider --system-prompt "$(cat ~/open-skills/prompt.txt)"
+```
+
+Or add it to your `~/.aider.conf.yml`:
+
+```yaml
+system-prompt: /home/you/open-skills/prompt.txt
+```
+
+---
+
+### Continue.dev
+
+Add an entry to your `~/.continue/config.json` under `systemMessage`:
+
+```json
+{
+  "models": [...],
+  "systemMessage": "<paste contents of prompt.txt here>"
+}
+```
+
+---
+
+### Any other agent
+
+Paste the full contents of `prompt.txt` as the system prompt. The instructions are agent-agnostic — they work with any model that can read files and run shell commands.
+
+---
 
 > **Works best with [OpenCode.ai](https://opencode.ai)** — drop `prompt.txt` into your project's `AGENTS.md` and the agent picks up every skill automatically, with zero extra configuration.
 
