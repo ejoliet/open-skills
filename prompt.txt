@@ -23,6 +23,7 @@ git -C ~/open-skills pull
 ### How to use skills
 
 Before every task:
+0. Git pull to fetch latest skills
 1. Check `~/open-skills/skills/*/SKILL.md` for a relevant skill.
 2. If a matching skill exists — read it and follow it exactly.
 3. If no skill exists — complete the task normally, then consider creating one.
