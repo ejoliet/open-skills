@@ -6,6 +6,8 @@ Load this prompt at the start of every session (including after reboot, restart,
 
 ### Installation (run once)
 
+install curl, git, GitHub CLI, on this system 
+
 ```bash
 git clone https://github.com/besoeasy/open-skills ~/open-skills
 ```
