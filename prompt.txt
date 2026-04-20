@@ -9,7 +9,7 @@ Load this prompt at the start of every session (including after reboot, restart,
 install curl, git, GitHub CLI, on this system 
 
 ```bash
-git clone https://github.com/besoeasy/open-skills ~/open-skills
+git clone https://github.com/ejoliet/open-skills ~/open-skills
 ```
 
 If already installed, sync before starting:
