@@ -37,7 +37,7 @@ Retries 15–20 times                 Done in 1–3 calls
 **Step 1 — Clone the skills library (once)**
 
 ```bash
-git clone https://github.com/besoeasy/open-skills ~/open-skills
+git clone https://github.com/ejoliet/open-skills ~/open-skills
 ```
 
 **Step 2 — Tell your agent about it**
